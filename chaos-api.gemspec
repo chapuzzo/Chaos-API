@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'chaos/api/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "chaos/api"
+  spec.name          = "chaos-api"
   spec.version       = Chaos::API::VERSION
   spec.authors       = ["chapuzzo"]
   spec.email         = ["luismax@gmail.com"]
