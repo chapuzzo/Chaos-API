@@ -35,6 +35,9 @@ module Chaos
       },
       team_mates:{
         route: '/games/team-mates'
+      },
+      start_game: {
+        route: '/games/start'
       }
     }
 
@@ -86,11 +89,11 @@ module Chaos
     # end
 
 
-    ACTIONS.keys.each do |key|
-      ap key
-      define_method(key) { |params|
+    ACTIONS.keys.each do |command|
+      ap command
+      define_method(command) { |params = {}, as_json = false|
         ap params
-        debug key, params
+        debug command, params, as_json
       }
     end
   end
