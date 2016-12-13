@@ -2,6 +2,7 @@ require "chaos/api/version"
 
 require 'faraday'
 require 'awesome_print'
+require 'json'
 
 module Chaos
   class API
