@@ -91,9 +91,9 @@ module Chaos
 
 
     ACTIONS.keys.each do |command|
-      ap command
+      # ap command
       define_method(command) { |params = {}, as_json = false|
-        ap params
+        # ap params
         debug command, params, as_json
       }
     end
