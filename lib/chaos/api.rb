@@ -8,8 +8,8 @@ module Chaos
   class API
 
     URLS = {
-      local: 'http://localhost:3000',
-      staging: 'http://chaosgame.herokuapp.com'
+      development: 'http://localhost:3000',
+      production: 'http://chaosgame.herokuapp.com'
     }
 
     ACTIONS = {
