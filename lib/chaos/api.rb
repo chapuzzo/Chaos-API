@@ -42,17 +42,19 @@ module Chaos
       }
     }
 
-    def initialize env = :local
-      env = URLS[env.to_sym] if URLS.keys.include? env.to_sym
+    def initialize env = :development
+      @url_prefix = URLS[env.to_sym] if URLS.keys.include? env.to_sym
 
       @connection = Faraday.new(
-        url: env,
+        url: @url_prefix,
         ssl: {
           ca_path: '/usr/lib/ssl/certs',
           verify: false
         }
       )
     end
+
+    attr_reader :url_prefix
 
     def call command, params = {}, as_json = false
       method = ACTIONS[command][:verb] || :post
